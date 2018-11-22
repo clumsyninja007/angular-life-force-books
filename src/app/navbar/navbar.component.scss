@@ -1,0 +1,55 @@
+nav {
+  background-color: rgba(0,0,0,0.7);
+  min-height: 46px;
+  min-width: 96vw;
+  position: fixed;
+  top: 8px;
+  left: 8px;
+  right: 8px;
+  z-index: 10;
+
+  overflow: hidden;
+
+  ul {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    min-height: 46px;
+  }
+}
+
+button {
+  display: none;
+}
+
+@media screen and (max-width: 800px) {
+  nav {
+    display: flex;
+    flex-direction: column;
+
+    ul {
+      display: none;
+    }
+    button {
+      display: block;
+      text-align: center;
+      height: 46px;
+      background: none;
+      border: 0;
+      color: white;
+      font-size: 22px;
+    }
+  }
+
+  nav.show-mobile {
+    button {
+      text-align: center;
+    }
+    ul {
+      float: flex;
+      display: block;
+      text-align: left;
+    }
+  }
+}

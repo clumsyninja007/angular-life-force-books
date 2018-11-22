@@ -1,0 +1,40 @@
+<li>
+  <a
+    *ngIf="nav.name !== 'HOME' && !parent"
+    href="/{{nav.name.toLowerCase().split(' ').join('-')}}"
+    target="_blank"
+    rel="noopener nofollow"
+  >
+    &nbsp;{{nav.name}}&nbsp;
+    <fa-icon *ngIf="nav.name === 'STORE'" [icon]="faCaretDown"></fa-icon>
+  </a>
+  <a
+    *ngIf="parent && nav.name.indexOf('|') === -1"
+    href="/{{parent.toLowerCase().split(' ').join('-')}}/{{nav.name.toLowerCase().split(' ').join('-')}}"
+    target="_blank"
+    rel="noopener nofollow"
+  >
+    {{nav.name.split('|')[0]}}
+  </a>
+  <a
+    *ngIf="parent && nav.name.indexOf('|') !== -1"
+    href="{{nav.name.split('|')[1]}}"
+    target="_blank"
+    rel="noopener nofollow"
+  >
+    {{nav.name.split('|')[0]}}
+  </a>
+  <a
+    *ngIf="nav.name === 'HOME'"
+    href="/"
+    target="_blank"
+    rel="noopener nofollow"
+  >
+    {{nav.name}}
+  </a>
+  <div *ngIf="nav.dropdown">
+    <ul>
+      <app-navitem *ngFor="let d of nav.dropdown" [setNav]="d" [parent]="nav.name"></app-navitem>
+    </ul>
+  </div>
+</li>

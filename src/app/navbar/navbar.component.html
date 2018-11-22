@@ -1,0 +1,8 @@
+<nav [class.show-mobile]="showMobile">
+  <button (click)="toggleMobileMenu()">
+    <fa-icon [icon]="faBars"></fa-icon>
+  </button>
+  <ul>
+    <app-navitem *ngFor="let n of navs" [nav]="n"></app-navitem>
+  </ul>
+</nav>
