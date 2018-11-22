@@ -50,7 +50,7 @@ div {
     flex-direction: column;
   }
 
-  a:hover {
+  a:hover, a.active {
     background-color: #55595c;
   }
 }

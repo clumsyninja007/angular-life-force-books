@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { Nav } from '../nav';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
@@ -23,17 +23,28 @@ export class NavbarComponent implements OnInit {
       new Nav("STORE",
         [
           "The Secret of the Golden Flower a Kundalini Meditation Method",
-          "Deciphering the Golden Flower"
+          "Deciphering the Golden Flower",
+          "Kundalini Musings",
+          "The Biology of Consciousness",
+          "Seminal Retention and Higher Consciousness",
+          "Female Kundalini",
+          "The Backward-Flowing Method"
         ]
       ),
       new Nav("SISTER SITES",
         [
           "Golden Flower Meditation|https://www.goldenflowermediation.com",
-          "Common Sense Kundalini|https://www.commonsensekundalini.com"
+          "Common Sense Kundalini|https://www.commonsensekundalini.com",
+          "The Kundalini Consortium|https://www.kundaliniconsortium.com",
+          "Editions Tilleul|https://www.editionstilleul.com"
         ]
       ),
       new Nav("CALENDAR"),
-      new Nav("ANNOUNCEMENTS"),
+      new Nav("ANNOUNCEMENTS",
+        [
+          "Huffington Post Review|https://www.huffingtonpost.com/peggy-payne/sex-energy-on-the-brain_b_6720844.html"
+        ]
+      ),
     ];
   }
 

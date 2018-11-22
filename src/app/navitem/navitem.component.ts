@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 import { Nav } from '../nav';
 import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
@@ -14,13 +15,13 @@ export class NavitemComponent implements OnInit {
   @Input() parent: string;
   @Input() externalURL: string;
   faCaretDown = faCaretDown;
+  active = false;
   
-  constructor() { }
+  constructor(private route: ActivatedRoute) { }
   
   ngOnInit() {
     if(this.setNav) {
       this.nav = new Nav(this.setNav)
     }
   }
-
 }

@@ -1,21 +1,27 @@
 <li>
+  <!-- NavLinks in a main nav other than home -->
   <a
     *ngIf="nav.name !== 'HOME' && !parent"
-    href="/{{nav.name.toLowerCase().split(' ').join('-')}}"
-    target="_blank"
-    rel="noopener nofollow"
+    routerLink="/{{nav.name.toLowerCase().split(' ').join('-')}}"
+    routerLinkActive="active"
   >
-    &nbsp;{{nav.name}}&nbsp;
-    <fa-icon *ngIf="nav.name === 'STORE'" [icon]="faCaretDown"></fa-icon>
+    {{nav.name}}
+    <span *ngIf="nav.name === 'STORE' ||
+    nav.name === 'SISTER SITES' ||
+    nav.name === 'ANNOUNCEMENTS'">
+      &nbsp;
+      <fa-icon [icon]="faCaretDown"></fa-icon>
+    </span>
   </a>
+  <!-- NavLinks in a submenu with internal routing -->
   <a
     *ngIf="parent && nav.name.indexOf('|') === -1"
-    href="/{{parent.toLowerCase().split(' ').join('-')}}/{{nav.name.toLowerCase().split(' ').join('-')}}"
-    target="_blank"
-    rel="noopener nofollow"
+    routerLink="/{{parent.toLowerCase().split(' ').join('-')}}/{{nav.name.toLowerCase().split(' ').join('-')}}"
+    routerLinkActive="active"
   >
     {{nav.name.split('|')[0]}}
   </a>
+  <!-- NavLinks in a submenu with external routing -->
   <a
     *ngIf="parent && nav.name.indexOf('|') !== -1"
     href="{{nav.name.split('|')[1]}}"
@@ -24,11 +30,12 @@
   >
     {{nav.name.split('|')[0]}}
   </a>
+  <!-- Home NavLink -->
   <a
     *ngIf="nav.name === 'HOME'"
-    href="/"
-    target="_blank"
-    rel="noopener nofollow"
+    routerLink="/"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{exact: true}"
   >
     {{nav.name}}
   </a>

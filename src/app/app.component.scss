@@ -1,0 +1,12 @@
+.content {
+  max-width: 1200px;
+  margin: auto;
+  margin-top: 65px;
+}
+
+@media only screen and (max-width: 1199px) {
+  .pageContent {
+    margin: auto;
+    width: 90vw;
+  }
+}
