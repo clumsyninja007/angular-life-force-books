@@ -18,6 +18,8 @@ import { AnnouncementsComponent } from './announcements/announcements.component'
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { InnerLinkComponent } from './inner-link/inner-link.component';
 import { TheSecretOfTheGoldenFlowerComponent } from './the-secret-of-the-golden-flower/the-secret-of-the-golden-flower.component';
+import { ImgBoxComponent } from './img-box/img-box.component';
+import { BuyFromAmazonComponent } from './buy-from-amazon/buy-from-amazon.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { TheSecretOfTheGoldenFlowerComponent } from './the-secret-of-the-golden-
     AnnouncementsComponent,
     SidebarComponent,
     InnerLinkComponent,
-    TheSecretOfTheGoldenFlowerComponent
+    TheSecretOfTheGoldenFlowerComponent,
+    ImgBoxComponent,
+    BuyFromAmazonComponent
   ],
   imports: [
     BrowserModule,

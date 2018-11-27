@@ -1,0 +1,40 @@
+figure {
+  display: flex;
+  
+  text-align: left;
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+figcaption {
+  margin-left: 20px;
+
+  h3 {
+    margin-top: 0;
+    a {
+      font-size: 20px;
+    }
+  }
+  p {
+    margin-bottom: 0;
+  }
+}
+
+img {
+  width: 145px;
+  height: 224px;
+}
+
+@media only screen and (max-width: 800px) {
+  figure {
+    flex-wrap: wrap;
+
+    img, a {
+      margin:auto;
+    }
+  }
+
+  figcaption {
+    margin-left: 0;
+  }
+}

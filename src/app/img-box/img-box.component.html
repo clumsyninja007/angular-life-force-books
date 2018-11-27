@@ -1,0 +1,14 @@
+<figure>
+  <app-inner-link [href]="href">
+    <img
+      [src]="src"
+      [alt]="alt"
+    />
+  </app-inner-link>
+  <figcaption>
+    <h3>
+      <app-inner-link [href]="href">{{title}}</app-inner-link>
+    </h3>
+    <ng-content></ng-content>
+  </figcaption>
+</figure>
